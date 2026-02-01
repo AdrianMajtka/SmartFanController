@@ -7,11 +7,11 @@
 
 #ifndef INC_TEMP_SENSOR_H_
 #define INC_TEMP_SENSOR_H_
-$include "main.h"
+#include "main.h"
 
-float TEMP_Read(void);
-
-void TEMP_Format(float value, char* buffor);
+void Temp_init(ADC_HandleTypeDef* hadc);
+float Temp_Read(void);
+void Temp_Format(float suma, char* buffor);
 
 
 #endif /* INC_TEMP_SENSOR_H_ */
