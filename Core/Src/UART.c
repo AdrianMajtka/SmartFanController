@@ -6,9 +6,16 @@
  */
 #include "UART.h"
 #include <stdio.h>
+#include "main.h"
 uint16_t Number_T;
 uint8_t recive;
 char UART_buffer[20];
+extern UART_HandleTypeDef huart2;
+void UART_Recive(void)
+{
+	HAL_UART_Receive_IT(&huart2, &recive, 1);
+}
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 if(huart->Instance==USART2)

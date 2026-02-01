@@ -1,1 +1,2 @@
-../Core/Src/UART.c:12:6:HAL_UART_RxCpltCallback	16	static
+../Core/Src/UART.c:14:6:UART_Recive	8	static
+../Core/Src/UART.c:19:6:HAL_UART_RxCpltCallback	16	static

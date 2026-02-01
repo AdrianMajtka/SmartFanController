@@ -7,8 +7,8 @@
 #include "main.h"
 #ifndef INC_UART_H_
 #define INC_UART_H_
-
-uint16_t LiczbaT;
-extern char UART_buffer[];
+extern uint16_t Number_T;
+extern char UART_buffer[20];
+void UART_Recive(void);
 
 #endif /* INC_UART_H_ */
