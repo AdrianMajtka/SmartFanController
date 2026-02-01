@@ -10,7 +10,7 @@ typedef enum
 	OLED_MANUAL
 }OLED_State;
 
-void OLED_Display(OLED_State state, char* bufor);
+void OLED_Display(OLED_State state, char* buffer);
 
 
 #endif /* INC_OLED_H_ */
