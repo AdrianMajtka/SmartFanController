@@ -1,3 +1,4 @@
+"./Core/Src/OLED.o"
 "./Core/Src/Temp_sensor.o"
 "./Core/Src/UART.o"
 "./Core/Src/app.o"

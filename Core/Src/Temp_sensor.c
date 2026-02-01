@@ -22,9 +22,9 @@ float Temp_Read(void)
 	return temp;
 }
 
-void Temp_Format(float suma, char* bufor)
+void Temp_Format(float temp, char* bufor)
 {
-	sprintf(bufor, "%.2f", suma);
+	sprintf(bufor, "%.2f", temp);
 
 }
 
