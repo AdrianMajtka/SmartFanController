@@ -28,10 +28,10 @@ if(huart->Instance==USART2)
 	{
 		temporary=(temporary*10)+(recive-'0');
 	}
-	else if (recive==13)
+	else if (recive==13)//Sprawdzenie czy wciśnięto enter
 	{
-		if (temporary>100)
-				temporary=100;
+		if (temporary>1000)//Bezpiecznik, aby nie przekroczono wartości maksymalnej.
+				temporary=1000;
 		Number_T=temporary;
 		sprintf(UART_buffer, "%d", Number_T);//Zmiana
 		temporary=0; //Zerowanie zmiennej przed kolejnym przejsciem funkcji

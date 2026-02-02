@@ -31,8 +31,8 @@ Core/Src/UART.o: ../Core/Src/UART.c ../Core/Inc/UART.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/main.h ../Core/Inc/fan_ctrl.h ../Core/Inc/OLED.h \
- ../Core/Inc/UART.h ../Core/Inc/app.h ../Core/Inc/fan_ctrl.h
+ ../Core/Inc/main.h ../Core/Inc/fan_ctrl.h ../Core/Inc/app.h \
+ ../Core/Inc/fan_ctrl.h
 ../Core/Inc/UART.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -69,7 +69,5 @@ Core/Src/UART.o: ../Core/Src/UART.c ../Core/Inc/UART.h ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../Core/Inc/main.h:
 ../Core/Inc/fan_ctrl.h:
-../Core/Inc/OLED.h:
-../Core/Inc/UART.h:
 ../Core/Inc/app.h:
 ../Core/Inc/fan_ctrl.h:

@@ -1,9 +1,10 @@
-#include "main.h"
 #ifndef INC_OLED_H_
 #define INC_OLED_H_
+#include "main.h"
 
 
-typedef enum
+
+typedef enum //Lista stanów Wyświetlacza
 {
 	OLED_AUTO,
 	OLED_ERROR,
