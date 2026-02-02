@@ -13,5 +13,5 @@ void App_Init(void) //Inicjalizacja funkcji App
 void App_Execution(void)
 {
 	FAN_Set_Speed(Current_State);
-
+	OLED_Display();
 }

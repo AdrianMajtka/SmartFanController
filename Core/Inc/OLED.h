@@ -11,7 +11,7 @@ typedef enum //Lista stanów Wyświetlacza
 	OLED_MANUAL
 }OLED_State;
 
-void OLED_Display(char* buffer);
+void OLED_Display(void);
 
 
 #endif /* INC_OLED_H_ */

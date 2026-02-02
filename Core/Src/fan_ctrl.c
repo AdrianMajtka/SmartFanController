@@ -23,7 +23,7 @@ void FAN_Set_Speed(FAN_State State) //Obsługa stanów wentylatora
 		}
 		else
 		{
-			pwm_value=(value-20)*20+400;
+			pwm_value=(value-20)*20+600;
 		}
 		if (pwm_value>1000)
 		{

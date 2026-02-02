@@ -5,22 +5,28 @@
 #include "fan_ctrl.h"
 #include "app.h"
 
-void OLED_Display(char* buffer) //Funkcja odpowiadająca za wyswietlanie
+extern volatile FAN_State Current_State;
+void OLED_Display(void) //Funkcja odpowiadająca za wyswietlanie
 {
+	char buffer[32]; //Bufor lokalny
 	OLED_State screen_state; //Mapowanie stanu wiatraka na OLED
+	float temp;
 	if (Current_State==FAN_MANUAL)
 	{
 		screen_state = OLED_MANUAL;
+		temp = Temp_Read();
+		sprintf(buffer, "Man: %.2f C", temp);
 	}
 	else if (Current_State==FAN_AUTO)
 	{
-		float temp=Temp_Read();  //Obliczanie zmiennej temp
-		screen_state=OLED_AUTO;
-		Temp_Format(temp, buffer); //Konwersja float na string
+		screen_state = OLED_AUTO;
+		temp = Temp_Read();
+		sprintf(buffer, "Auto: %.2f C", temp);
 	}
 	else
 	{
 		screen_state=OLED_ERROR;
+		sprintf(buffer, "ERROR");
 	}
 	ssd1306_Fill(Black); //Wyczyszczenie ekranu
 	switch(screen_state)
