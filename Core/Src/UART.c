@@ -7,7 +7,9 @@
 #include "UART.h"
 #include <stdio.h>
 #include "main.h"
-uint16_t Number_T;
+#include "fan_ctrl.h"
+#include "app.h"
+volatile uint16_t Number_T;
 uint8_t recive;
 char UART_buffer[20];
 extern UART_HandleTypeDef huart2;
@@ -20,17 +22,20 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 if(huart->Instance==USART2)
 {
+	static uint16_t temporary; //Zmienna tymczasowa
+	Current_State=FAN_MANUAL;
 	if(recive>='0' && recive<='9')
 	{
-		Number_T=(Number_T*10)+(recive-'0');
+		temporary=(temporary*10)+(recive-'0');
 	}
 	else if (recive==13)
 	{
-		if (Number_T>100)
-				Number_T=100;
-		sprintf(UART_buffer, "%d", Number_T);
-		Number_T=0;
+		if (temporary>100)
+				temporary=100;
+		Number_T=temporary;
+		sprintf(UART_buffer, "%d", Number_T);//Zmiana
+		temporary=0; //Zerowanie zmiennej przed kolejnym przejsciem funkcji
 	}
-
+	HAL_UART_Receive_IT(&huart2, &recive, 1);
 	}
 }

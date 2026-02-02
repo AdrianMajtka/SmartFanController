@@ -1,10 +1,3 @@
-/*
- * fam_ctrl.h
- *
- *  Created on: 1 lut 2026
- *      Author: 48783
- */
-
 #ifndef INC_FAN_CTRL_H_
 #define INC_FAN_CTRL_H_
 #include "main.h"
@@ -14,6 +7,12 @@
 extern uint8_t speed;
 extern float value;
 
-void FAN_Set_Speed(OLED_State State);
+typedef enum
+{
+	FAN_AUTO,
+	FAN_MANUAL
+}FAN_State;
+
+void FAN_Set_Speed(FAN_State State);
 
 #endif /* INC_FAN_CTRL_H_ */

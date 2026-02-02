@@ -7,7 +7,7 @@
 #include "main.h"
 #ifndef INC_UART_H_
 #define INC_UART_H_
-extern uint16_t Number_T;
+extern volatile uint16_t Number_T;
 extern char UART_buffer[20];
 void UART_Recive(void);
 
