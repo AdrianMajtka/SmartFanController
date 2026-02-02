@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 static uint16_t adc_buffer[100];
-
+uint32_t suma=0;
 void Temp_init(ADC_HandleTypeDef* hadc)
 {
 	HAL_ADC_Start_DMA(hadc, (uint32_t*)adc_buffer, 100);
@@ -12,7 +12,7 @@ void Temp_init(ADC_HandleTypeDef* hadc)
 float Temp_Read(void)
 {
 	uint8_t i;
-	uint32_t suma=0;
+
 	float temp;
 	for(i=0;i<=99; i++)
 	{
