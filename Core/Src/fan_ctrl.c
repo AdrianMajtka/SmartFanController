@@ -10,7 +10,7 @@ extern volatile FAN_State Current_State;
 void FAN_Fuse(void) //Bezpiecznik
 {
 float temp=Temp_Read();
-if (temp<5 || temp>95)
+if (temp<10 || temp>95)
 {
 	FAN_Set_Speed(FAN_ERROR);
 }

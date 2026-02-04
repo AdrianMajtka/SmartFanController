@@ -10,8 +10,15 @@ void OLED_Display(void) //Funkcja odpowiadająca za wyswietlanie
 {
 	char buffer[32]; //Bufor lokalny
 	OLED_State screen_state; //Mapowanie stanu wiatraka na OLED
-	float temp;
-	if (Current_State==FAN_MANUAL)
+	float temp=Temp_Read();
+
+
+	if (temp<10||temp>95)
+	{
+		screen_state = OLED_ERROR;
+	}
+
+	else if (Current_State==FAN_MANUAL)
 	{
 		screen_state = OLED_MANUAL;
 		temp = Temp_Read();
@@ -23,11 +30,7 @@ void OLED_Display(void) //Funkcja odpowiadająca za wyswietlanie
 		temp = Temp_Read();
 		sprintf(buffer, "Auto: %.2f C", temp);
 	}
-	else
-	{
-		screen_state=OLED_ERROR;
-		sprintf(buffer, "ERROR");
-	}
+
 	ssd1306_Fill(Black); //Wyczyszczenie ekranu
 	switch(screen_state)
 
