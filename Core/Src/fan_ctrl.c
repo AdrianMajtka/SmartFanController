@@ -6,6 +6,19 @@ extern volatile uint16_t Number_T;
 extern uint32_t suma;
 uint8_t speed =0;
 float value;
+extern volatile FAN_State Current_State;
+void FAN_Fuse(void) //Bezpiecznik
+{
+float temp=Temp_Read();
+if (temp<5 || temp>95)
+{
+	FAN_Set_Speed(FAN_ERROR);
+}
+else
+{
+	FAN_Set_Speed(Current_State);
+}
+}
 
 void FAN_Set_Speed(FAN_State State) //Obsługa stanów wentylatora
 {
@@ -32,7 +45,7 @@ void FAN_Set_Speed(FAN_State State) //Obsługa stanów wentylatora
 		TIM3->CCR1=pwm_value;
 		break;
 	case FAN_ERROR:
-		TIM3->CCR1=500; //Bezpieczna wartość aby system się nie przegrzał nawet przy błędzie.
+		TIM3->CCR1=700; //Bezpieczna wartość aby system się nie przegrzał nawet przy błędzie.
 		break;
 	}
 
