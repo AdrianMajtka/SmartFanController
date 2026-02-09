@@ -4,11 +4,11 @@
 
 
 
-typedef enum //Lista stanów Wyświetlacza
+typedef enum
 {
-	OLED_AUTO,
-	OLED_ERROR,
-	OLED_MANUAL
+	OLED_AUTO, //Wyświetlanie wartości z czujnika
+	OLED_MANUAL, //Wyświetlanie wartości wpisanej przez użytkownika (UART)
+	OLED_ERROR //Wyświetlanie błędu systemu
 }OLED_State;
 
 void OLED_Display(void);
