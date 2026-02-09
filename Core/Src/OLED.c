@@ -8,6 +8,7 @@ void OLED_Display(void) //Funkcja odpowiadająca za wyswietlanie
 {
 	char buffer[32]; //Bufor lokalny
 	OLED_app(buffer, &screen_state);
+	ssd1306_Fill(Black);
 	switch(screen_state)
 	{
 		case OLED_AUTO:
