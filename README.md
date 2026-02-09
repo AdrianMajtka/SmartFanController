@@ -16,7 +16,7 @@ Inteligentny sterownik wentylatora oparty na mikrokontrolerze STM32. System regu
 4.  Po wpisaniu wartości z jaką ma obracać się wentylator (zakres od 1 do 1000) w terminalu UART, następuje przerwanie które zmienia tryb systemu na MANUAL(Każda wpisana wartość musi być potwierdzona ENTEREM)
 5.  Gdy chcemy powrócić do trybu AUTO należy wpisać wartość 0.
 
- ## 🛠 Użyte technologie i sprzęt
+ ## Użyte technologie i sprzęt
 * Mikrokontroler: NUCLEO-F411RE
 * Język: C
 * IDE: STM32CubeIDE
