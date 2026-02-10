@@ -19,10 +19,12 @@ Inteligentny sterownik wentylatora oparty na mikrokontrolerze STM32. System regu
  ## Użyte technologie i sprzęt
 * Mikrokontroler: NUCLEO-F411RE
 * Język: C
-* IDE: STM32CubeIDE
+* STM32CubeIDE
 * CubeMX
 * Peryferia:
     * ADC + DMA (pomiar temperatury)
     * Timer PWM (sterowanie silnikiem)
     * I2C (obsługa OLED)
     * UART (komunikacja z PC)
+
+<img width="551" height="506" alt="image" src="https://github.com/user-attachments/assets/96f4f715-d953-461a-8489-e584cdd10486" />
